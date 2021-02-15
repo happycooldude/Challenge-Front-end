@@ -6,10 +6,11 @@ subjects.forEach(function(subject){
 let currentSubject = 0;
 
 const startButton = document.getElementById("startBtn")
-const titleHeader = document.getElementById("Title")
+const titleHeader = document.getElementById("title")
 const statementPar = document.getElementById("Statement")
 const previousbutton = document.getElementById("vorige")
 const nextbutton = document.getElementById("volgende")
+const numberOfQuestions = subjects.length
 
 startButton.onclick = clickStartBtn;
 previousbutton.onclick = vorige;
@@ -36,7 +37,7 @@ function vorige(){
 
 function volgende(){
     currentSubject ++
-    if(currentSubject<=3){
+    if(currentSubject<=numberOfQuestions){
     titleHeader.innerHTML = subjects[currentSubject].title;
     statementPar.innerHTML = subjects[currentSubject].statement;
     }else(currentSubject --)
