@@ -22,16 +22,21 @@ eensBTN.onclick = antwoord;
 geenVbeideBTN.onclick = antwoord;
 oneensBTN.onclick = antwoord;
 
+//de startknop die alle elementen moet laden
 function clickStartBtn() {
     const container = document.getElementById("container")
     show(container);
     show(previousbutton);
     show(nextbutton);
+    show(eensBTN);
+    show(geenVbeideBTN);
+    show(oneensBTN);
 
     titleHeader.innerHTML = subjects[currentSubject].title;
     statementPar.innerHTML = subjects[currentSubject].statement;
 }
 
+//scroll door de vragenlijst heen
 function vorige(){
     currentSubject --
     if(currentSubject >=0){
@@ -50,23 +55,35 @@ function volgende(){
     console.log(currentSubject)
 }
 
+//geef antwoord op de stelling
 function antwoord(){
     if(this.id=="eens"){
+        color(eensBTN)
+        uncolor(geenVbeideBTN)
+        uncolor(oneensBTN)
         volgende;
-        document.getElementById("eens").style.backgroundColor="green"
-        document.getElementById("geenVbeide","oneens").style.backgroundColor="lightgray"
-        console.log(volgende)
     }
     else if(this.id=="geenVbeide"){
-        document.getElementById("geenVbeide").style.backgroundColor="green"
-        document.getElementById("eens"&"oneens").style.backgroundColor="lightgray"
+        color(geenVbeideBTN)
+        uncolor(eensBTN)
+        uncolor(oneensBTN)
         volgende;
     }
     else if(this.id=="oneens"){
-        document.getElementById("oneens").style.backgroundColor="green"
-        document.getElementById("geenVbeide"&"eens").style.backgroundColor="lightgray"
+        color(oneensBTN)
+        uncolor(eensBTN)
+        uncolor(geenVbeideBTN)
         volgende;
     }
+}
+
+//geef kleur aan de gekozen keuze
+function color(element){
+    element.style.backgroundColor = "green"
+}
+
+function uncolor(element){
+    element.style.backgroundColor = "lightgray"
 }
 
 //show element
