@@ -61,20 +61,18 @@ function antwoord(){
         color(eensBTN)
         uncolor(geenVbeideBTN)
         uncolor(oneensBTN)
-        volgende;
     }
     else if(this.id=="geenVbeide"){
         color(geenVbeideBTN)
         uncolor(eensBTN)
         uncolor(oneensBTN)
-        volgende;
     }
     else if(this.id=="oneens"){
         color(oneensBTN)
         uncolor(eensBTN)
         uncolor(geenVbeideBTN)
-        volgende;
     }
+    volgende();
 }
 
 //geef kleur aan de gekozen keuze
