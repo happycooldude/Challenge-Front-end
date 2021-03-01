@@ -43,7 +43,7 @@ function vorige() {
     titleHeader.innerHTML = subjects[currentSubject].title;
     statementPar.innerHTML = subjects[currentSubject].statement;
   } else currentSubject++;
-  console.log(currentSubject);
+  checkanswer()
 }
 
 function volgende() {
@@ -52,7 +52,7 @@ function volgende() {
     titleHeader.innerHTML = subjects[currentSubject].title;
     statementPar.innerHTML = subjects[currentSubject].statement;
   } else currentSubject--;
-  console.log(currentSubject);
+  checkanswer()
 }
 
 //geef antwoord op de stelling
@@ -78,17 +78,17 @@ function antwoord() {
   volgende();
 }
 
-function checkanswerforward(){
-for (let answer = 0; answer < array.length; answer++) {
-      if (answer == "eens") {
+function checkanswer(){
+for (let answer = 0; answer < answerArray.length; answer++) {
+      if (answerArray[answer] == "eens") {
         color(eensBTN);
         uncolor(geenVbeideBTN);
         uncolor(oneensBTN);
-      } else if (this.id == "geenVbeide") {
+      } else if (answerArray[answer] == "geenVbeide") {
         color(geenVbeideBTN);
         uncolor(eensBTN);
         uncolor(oneensBTN);
-      } else if (this.id == "oneens") {
+      } else if (answerArray[answer] == "oneens") {
         color(oneensBTN);
         uncolor(eensBTN);
         uncolor(geenVbeideBTN);
