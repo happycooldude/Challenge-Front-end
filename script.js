@@ -4,7 +4,6 @@ subjects.forEach(function (subject) {
 
 let currentSubject = 0;
 let answerArray = [];
-let checkArray = [];
 
 const startButton = document.getElementById("startBtn");
 const titleHeader = document.getElementById("title");
@@ -75,9 +74,27 @@ function antwoord() {
   if (answerArray.length >= numberOfQuestions + 1) {
     answerArray.pop();
   }
-  console.log(answerArray);
+  console.log("antwoord",answerArray);
   volgende();
 }
+
+function checkanswerforward(){
+for (let answer = 0; answer < array.length; answer++) {
+      if (answer == "eens") {
+        color(eensBTN);
+        uncolor(geenVbeideBTN);
+        uncolor(oneensBTN);
+      } else if (this.id == "geenVbeide") {
+        color(geenVbeideBTN);
+        uncolor(eensBTN);
+        uncolor(oneensBTN);
+      } else if (this.id == "oneens") {
+        color(oneensBTN);
+        uncolor(eensBTN);
+        uncolor(geenVbeideBTN);
+      }
+    }
+  }
 
 //geef kleur aan de gekozen keuze
 function color(element) {
